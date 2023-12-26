@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Kilometers to Miles Converter</h1>
+    <label for="kilometers">Enter distance in kilometers:</label>
+    <input type="number" id="kilometers" placeholder="Enter kilometers">
+    <button onclick="convertToMiles()">Convert to Miles</button>
+    <p id="result">The distance in miles will be displayed here.</p>
+
+    <script>
+        function convertToMiles() {
+            // Get the value from the input field
+            let kilometers = parseFloat(document.getElementById('kilometers').value);
+            // Check if the input is a valid number
+            if (isNaN(kilometers)) {
+                document.getElementById('result').innerText = "Please enter a valid number.";
+            } else {
+                // Convert kilometers to miles using the conversion factor
+                let miles = kilometers * 0.621371;
+                // Display the result
+                document.getElementById('result').innerText = `${kilometers} kilometers is approximately
+        ${miles.toFixed(5)} miles.`;
+            }
+        }
+    </script>
+</body>
+
+</html>
